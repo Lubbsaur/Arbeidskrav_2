@@ -1,9 +1,39 @@
 import { resources } from "../assets/resources";
+import { Link } from "react-router-dom";
 
 export default function Nav({ setToggle, toggle }) {
   //const [navigate, ]
 
-  const navigationSlug = resources.filter((item) => item.category === slug);
+  const navigateTabs = [
+    {
+      id: 1,
+      name: 'HTML',
+      slug: 'html'
+    },
+    {
+      id: 2,
+      name: "CSS",
+      slug: 'css'
+    },
+    {
+      id: 3,
+      name: 'JavaScript',
+      slug: 'javascript'
+    },
+    {
+      id: 4,
+      name: 'React',
+      slug: 'react'
+    },
+    {
+      id: 5,
+      name: 'Sanity and headless CMS',
+      slug: 'sanity'
+    }
+  ]
+  
+  
+  
 
   const handleClick = (e) => {
     e.preventDefault();
@@ -11,6 +41,7 @@ export default function Nav({ setToggle, toggle }) {
     
   }
 
+  {/*
   function NavMapped() {
       return (
       <>
@@ -22,9 +53,16 @@ export default function Nav({ setToggle, toggle }) {
         )
        })}
       </>
-    )}
+    )}*/}
   
   return (
-    <NavMapped />
+    <div>
+      {navigateTabs.map((category) => (
+        <li key={category.id}>
+            <Link to={`/category/${category.slug}`}>{category.name}</Link>
+        </li>
+        
+      ))}
+    </div>  
   )
 }
