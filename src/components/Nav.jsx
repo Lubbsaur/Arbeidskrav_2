@@ -1,18 +1,24 @@
 import { resources } from "../assets/resources";
 
-export default function Nav({ setToggle }) {
-  
-  const handleClick = () => {
-    setToggle(!toggle);
-    console.log(toggle)
+export default function Nav({ setToggle, toggle }) {
+  //const [navigate, ]
+
+  const navigationSlug = resources.filter((item) => item.category === slug);
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log("heyo", e.target.innerHTML)
+    
   }
 
   function NavMapped() {
       return (
       <>
-       {resources.map((data, index) => {
+       {resources.map((data) => {
         return  (
-          <li key={index} onClick={handleClick}>{data.category}</li>
+          <div key={data.category} onClick={handleClick}>
+            <li><a>{data.category}</a></li>
+          </div>
         )
        })}
       </>

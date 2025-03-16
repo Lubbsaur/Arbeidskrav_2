@@ -1,9 +1,19 @@
+import Nav from "./Nav";
 import Resources from "./Resources";
 
-export default function Layout({  }) {
+export default function Layout({ }) {
   return (
     <main>
-      <Resources />
+      <section id="main-section">
+       <nav>
+         <ul className="navList">
+          <Nav />
+         </ul>
+       </nav>
+       <article id="main-article">
+         <Resources />
+       </article>
+      </section>
     </main>
   );
 }
