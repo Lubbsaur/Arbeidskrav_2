@@ -17,7 +17,7 @@ function App() {
     
     <Layout >
     <Routes>
-      <Route path='/:slug' element={<Resources />} />
+      <Route path='/:slug' element={<Nav />}></Route>
     </Routes>
     </Layout>
     

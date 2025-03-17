@@ -1,8 +1,14 @@
 import { resources } from "../assets/resources";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
-export default function Nav({ setToggle, toggle }) {
-  //const [navigate, ]
+export default function Nav({}) {
+
+  const handleClick = (e) => {
+    e.preventDefault();
+    console.log("heyo", e.target.innerHTML)
+    //const target = e.target.innerHTML;
+  }
 
   const navigateTabs = [
     {
@@ -32,16 +38,18 @@ export default function Nav({ setToggle, toggle }) {
     }
   ]
   
-  
-  
+  return (
+    <div>
+    {navigateTabs.map((category) => (
+      <li key={category.id}>
+          <Link to={`/${category.slug}`}>{category.name}</Link>
+      </li>
+    ))}
+    </div>
+  )
+}
 
-  const handleClick = (e) => {
-    e.preventDefault();
-    console.log("heyo", e.target.innerHTML)
-    
-  }
-
-  {/*
+ {/*
   function NavMapped() {
       return (
       <>
@@ -54,15 +62,3 @@ export default function Nav({ setToggle, toggle }) {
        })}
       </>
     )}*/}
-  
-  return (
-    <div>
-      {navigateTabs.map((category) => (
-        <li key={category.id}>
-            <Link to={`/category/${category.slug}`}>{category.name}</Link>
-        </li>
-        
-      ))}
-    </div>  
-  )
-}
