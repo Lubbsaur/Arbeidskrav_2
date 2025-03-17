@@ -1,35 +1,31 @@
-import { useState } from "react";
 import { Link } from "react-router-dom";
-import { resources } from "../assets/resources";
 import { useParams } from "react-router-dom";
-import Nav from "./Nav";
+import PageTitle from "./PageTitle";
 
-export default function Resources({  }) {
+export default function Resources({ resources }) {
+  const {slug} = useParams();
 
-  //const resoursesSlug = resources.filter((product) => product.category === slug);
-
-  const resource = resources.map((item, index) => 
-    <div key={index}>
-      <h2>{item.category}</h2>
-        <p>{item.text}</p>
-        <ul>
-          <li> 
-              {item.sources
-                .map(source => 
-                <div key={source.title}>
-                  <Link to={source.url}>{source.title}</Link>
-                </div>)}
-          </li>
-        </ul>
-    </div>
-  )
-
+  console.log(resources)
   
+  const resoursesSlug = resources.filter((resource) => resource.category === slug);
+
+ console.log(resoursesSlug)
+
+
 
   return (
     <>
-     {resource[0]}
+    {resoursesSlug.map((resource, index) => 
+      <article key={index}>
+        <PageTitle title={resource.category} />
+            <p>{resource.title}</p>
+            <ul>
+              <li> 
+                <Link to={resource.url}>{resource.title}</Link>
+              </li>
+            </ul>
+        </article>
+      )}
     </>
-    
   );
 }

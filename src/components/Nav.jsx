@@ -39,13 +39,15 @@ export default function Nav({}) {
   ]
   
   return (
-    <div>
+    <nav>
+    <ul>
     {navigateTabs.map((category) => (
       <li key={category.id}>
           <Link to={`/${category.slug}`}>{category.name}</Link>
       </li>
     ))}
-    </div>
+    </ul>
+    </nav>
   )
 }
 

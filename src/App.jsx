@@ -7,17 +7,21 @@ import Layout from './components/Layout';
 import { Route, Routes } from 'react-router-dom';
 import Resources from './components/Resources';
 import Nav from './components/Nav';
+import PageTitle from './components/PageTitle';
+import { resources } from './assets/resources';
 
 
 
 function App() {
   const [toggle, setToggle] = useState();
 
+
+
   return (
     
     <Layout >
     <Routes>
-      <Route path='/:slug' element={<Nav />}></Route>
+      <Route path='/:slug' element={<Resources resources={resources} />}></Route>
     </Routes>
     </Layout>
     

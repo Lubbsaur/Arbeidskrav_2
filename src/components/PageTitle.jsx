@@ -2,13 +2,14 @@ import { useEffect, useState } from "react";
 import { resources } from "../assets/resources";
 import Nav from "./Nav";
 import { useParams } from "react-router-dom";
+import Resources from "./Resources";
 
-export default function PageTitle({}) {
-
+export default function PageTitle({title }) {
+  
+  //const slug = slug.toUpperCase();
+  
 
   return (
-    <div>
-      <h1>Hey</h1>
-    </div>
+    <h1>{title}</h1>
   )
 }
