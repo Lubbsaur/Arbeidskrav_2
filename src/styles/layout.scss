@@ -10,10 +10,9 @@ body {
   font-weight: 600;
 }
 
-#main-section {
+#root{
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
   align-content: center;
   margin-left: auto;
@@ -27,14 +26,10 @@ body {
     ul {
       
       padding: 0;
-
-      div {
       display: flex;
       list-style: none;
       justify-content: space-between;
       gap: .5rem;
-      
-      }
 
       li {
 
@@ -47,8 +42,6 @@ body {
           background: colors.$blueDark;
         }
 
-        
-
       }
     }
   }
@@ -59,27 +52,21 @@ body {
   }
   
 
-  #main-article {
+  #main-section {
     background-color: colors.$white;
     color: colors.$blueDark;
-    
     width: 100%;
     height: auto;
     display: flex;
+    flex-direction: column;
     padding: 5rem;
     box-sizing: border-box;
     text-align: left;
     
-    div {
-      display: flex;
-      flex-direction: column;
-      
-      ul {
-        list-style: none;
-        padding: 0;
-      }  
+    ul {
+      list-style: none;
+      padding: 0;
     }
-    
 
   }
 

@@ -9,16 +9,16 @@ export default function Resources({ resources }) {
   
   const resoursesSlug = resources.filter((resource) => resource.category === slug);
 
- console.log(resoursesSlug)
+  console.log(resoursesSlug)
 
 
 
   return (
     <>
+    <PageTitle title={resoursesSlug[0].category} />
     {resoursesSlug.map((resource, index) => 
       <article key={index}>
-        <PageTitle title={resource.category} />
-            <p>{resource.title}</p>
+        {/*<PageTitle title={resource.category} />*/}
             <ul>
               <li> 
                 <Link to={resource.url}>{resource.title}</Link>

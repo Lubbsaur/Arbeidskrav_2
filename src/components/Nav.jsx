@@ -34,7 +34,7 @@ export default function Nav({}) {
     {
       id: 5,
       name: 'Sanity and headless CMS',
-      slug: 'sanity'
+      slug: 'headless-cms'
     }
   ]
   

@@ -2,7 +2,7 @@ import Nav from "./Nav";
 import PageTitle from "./PageTitle";
 import Resources from "./Resources";
 
-export default function Layout({ children}) {
+export default function Layout({ children }) {
   
   
   return (
